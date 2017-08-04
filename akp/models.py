@@ -38,7 +38,7 @@ class NationalWinner(Winner):
             'award_time': self.award_time.ctime(),
             'award_venue': self.award_venue,
             'kazemi': self.kazemi,
-            'abstract': {
+            'aabstract': {
                 'background': self.nationalwinnerabstract_set.first().background,
                 'objective': self.nationalwinnerabstract_set.first().objective,
                 'method': self.nationalwinnerabstract_set.first().method,
@@ -64,7 +64,7 @@ class InternationalWinner(Winner):
             'award_time': self.award_time.ctime(),
             'award_venue': self.award_venue,
             'kazemi': self.kazemi,
-            'abstract': {
+            'aabstract': {
                 'background': self.internationalwinnerabstract_set.first().background,
                 'objective': self.internationalwinnerabstract_set.first().objective,
                 'method': self.internationalwinnerabstract_set.first().method,

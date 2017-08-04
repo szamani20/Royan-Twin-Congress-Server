@@ -47,7 +47,7 @@ class ISSpeaker(Speaker):
                 'topic': self.topic,
                 'time': self.time,
                 'venue': self.venue,
-                'abstract': {
+                'aabstract': {
                     'background': self.isabstract_set.first().background,
                     'objective': self.isabstract_set.first().objective,
                     'method': self.isabstract_set.first().method,
@@ -72,7 +72,7 @@ class OPSpeaker(Speaker):
                 'topic': self.topic,
                 'time': self.time,
                 'venue': self.venue,
-                'abstract': {
+                'aabstract': {
                     'background': self.opabstract_set.first().background,
                     'objective': self.opabstract_set.first().objective,
                     'method': self.opabstract_set.first().method,
@@ -97,7 +97,7 @@ class Poster(Speaker):
                 'topic': self.topic,
                 'time': self.time,
                 'venue': self.venue,
-                'abstract': {
+                'aabstract': {
                     'background': self.posterabstract_set.first().background,
                     'objective': self.posterabstract_set.first().objective,
                     'method': self.posterabstract_set.first().method,
