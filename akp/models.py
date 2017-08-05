@@ -46,7 +46,7 @@ class NationalWinner(Winner):
                               'result': self.nationalwinnerabstract_set.first().result,
                               'conclusion': self.nationalwinnerabstract_set.first().conclusion,
                               'keyword': self.nationalwinnerabstract_set.first().keyword,
-                              } if self.nationalwinnerabstract_set.first() else '',
+                              } if self.nationalwinnerabstract_set.first() else None,
                 }
 
 
@@ -73,5 +73,5 @@ class InternationalWinner(Winner):
                     'result': self.internationalwinnerabstract_set.first().result,
                     'conclusion': self.internationalwinnerabstract_set.first().conclusion,
                     'keyword': self.internationalwinnerabstract_set.first().keyword,
-                } if self.internationalwinnerabstract_set.first() else '',
+                } if self.internationalwinnerabstract_set.first() else None,
                 }
