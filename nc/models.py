@@ -39,6 +39,8 @@ class ISSpeaker(Speaker):
 
     def get_json(self):
         return {'id': self.pk,
+                'congress': 2,
+                'type': 0,
                 'name': self.name,
                 'email': self.email,
                 'country': self.country,
@@ -64,6 +66,8 @@ class OPSpeaker(Speaker):
 
     def get_json(self):
         return {'id': self.pk,
+                'congress': 2,
+                'type': 1,
                 'name': self.name,
                 'email': self.email,
                 'country': self.country,
@@ -89,6 +93,8 @@ class Poster(Speaker):
 
     def get_json(self):
         return {'id': self.pk,
+                'congress': 2,
+                'type': 2,
                 'name': self.name,
                 'email': self.email,
                 'country': self.country,
