@@ -21,10 +21,10 @@ class SponsorCompany(Company):
         return {
             'id': self.pk,
             'name': self.name,
-            'logo': self.logo.url if self.logo and self.logo.url else '',
+            'logo': 'https://royan.szamani.ir' + self.logo.url if self.logo and self.logo.url else '',
             'location': self.location,
             'pics': [
-                i.image.url if i.image and i.image.url else ''
+                'https://royan.szamani.ir' + i.image.url if i.image and i.image.url else ''
                 for i in list(self.companypictures_set.all())
                 ],
             'website': self.website,
@@ -42,10 +42,10 @@ class OrdinaryCompany(Company):
         return {
             'id': self.pk,
             'name': self.name,
-            'logo': self.logo.url if self.logo and self.logo.url else '',
+            'logo': 'https://royan.szamani.ir' + self.logo.url if self.logo and self.logo.url else '',
             'location': self.location,
             'pics': [
-                i.image.url if i.image and i.image.url else ''
+                'https://royan.szamani.ir' + i.image.url if i.image and i.image.url else ''
                 for i in list(self.companypictures_set.all())
                 ],
             'website': self.website,
