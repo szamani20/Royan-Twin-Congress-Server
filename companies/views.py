@@ -3,16 +3,23 @@ from django.http import JsonResponse
 from django.utils import timezone
 from django.views.decorators.csrf import csrf_exempt
 
-from companies.models import Company, SponsorCompany, OrdinaryCompany
+from companies.models import SponsorCompany, OrdinaryCompany
 
 
 def alive(request):
     return HttpResponse(timezone.localtime(timezone.now()))
 
 
-def all_companies(request):
-    ac = list(Company.objects.all())
-    data = [s.get_json() for s in ac]
+def sp_company(request):
+    all_is_speakers = list(SponsorCompany.objects.all())
+    data = [s.get_json() for s in all_is_speakers]
+    return JsonResponse(data=data,
+                        safe=False)
+
+
+def or_company(request):
+    all_is_speakers = list(OrdinaryCompany.objects.all())
+    data = [s.get_json() for s in all_is_speakers]
     return JsonResponse(data=data,
                         safe=False)
 
