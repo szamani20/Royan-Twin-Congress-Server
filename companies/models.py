@@ -28,7 +28,8 @@ class SponsorCompany(Company):
                 ],
             'website': self.website,
             'phone': self.phone,
-            'address': self.address
+            'address': self.address,
+            'type': 0
         }
 
 
@@ -47,5 +48,6 @@ class OrdinaryCompany(Company):
                 ],
             'website': self.website,
             'phone': self.phone,
-            'address': self.address
+            'address': self.address,
+            'type': 1
         }
