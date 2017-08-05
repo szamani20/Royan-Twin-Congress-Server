@@ -19,7 +19,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=100)),
-                ('logo', models.ImageField(blank=True, null=True, upload_to='images/companies/')),
+                ('logo', models.ImageField(blank=True, null=True, upload_to='images/company/')),
                 ('location', models.CharField(blank=True, max_length=200, null=True)),
                 ('website', models.URLField(blank=True, null=True)),
                 ('phone', models.CharField(blank=True, max_length=20, null=True)),
@@ -33,8 +33,8 @@ class Migration(migrations.Migration):
             name='OrdinaryCompanyPictures',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('image', models.ImageField(upload_to='images/companies/bulk/')),
-                ('company', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='companies.OrdinaryCompany')),
+                ('image', models.ImageField(upload_to='images/company/bulk/')),
+                ('company', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='company.OrdinaryCompany')),
             ],
         ),
         migrations.CreateModel(
@@ -42,7 +42,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=100)),
-                ('logo', models.ImageField(blank=True, null=True, upload_to='images/companies/')),
+                ('logo', models.ImageField(blank=True, null=True, upload_to='images/company/')),
                 ('location', models.CharField(blank=True, max_length=200, null=True)),
                 ('website', models.URLField(blank=True, null=True)),
                 ('phone', models.CharField(blank=True, max_length=20, null=True)),
@@ -56,8 +56,8 @@ class Migration(migrations.Migration):
             name='SponsorCompanyPictures',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('image', models.ImageField(upload_to='images/companies/bulk/')),
-                ('company', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='companies.SponsorCompany')),
+                ('image', models.ImageField(upload_to='images/company/bulk/')),
+                ('company', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='company.SponsorCompany')),
             ],
         ),
     ]

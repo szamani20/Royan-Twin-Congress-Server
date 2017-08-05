@@ -3,7 +3,7 @@ from django.http import JsonResponse
 from django.utils import timezone
 from django.views.decorators.csrf import csrf_exempt
 
-from companies.models import SponsorCompany, OrdinaryCompany
+from company.models import SponsorCompany, OrdinaryCompany
 
 
 def alive(request):

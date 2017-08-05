@@ -47,7 +47,7 @@ class Winner(models.Model):
 
 class Company(models.Model):
     name = models.CharField(max_length=100)
-    logo = models.ImageField(null=True, blank=True, upload_to='images/companies/')
+    logo = models.ImageField(null=True, blank=True, upload_to='images/company/')
     location = models.CharField(max_length=200, null=True, blank=True)  # ghorfe!
     website = models.URLField(null=True, blank=True)
     phone = models.CharField(max_length=20, null=True, blank=True)

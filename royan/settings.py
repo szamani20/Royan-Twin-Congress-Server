@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'agenda',
     'akp',
-    'companies',
+    'company',
     'rbc',
     'scc',
     'nc',

@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from companies.models import OrdinaryCompanyPictures, SponsorCompanyPictures, OrdinaryCompany, SponsorCompany
+from company.models import OrdinaryCompanyPictures, SponsorCompanyPictures, OrdinaryCompany, SponsorCompany
 from royan.AdminBase import CompanyAdminBase
 
 

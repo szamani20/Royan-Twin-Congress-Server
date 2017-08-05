@@ -4,12 +4,12 @@ from royan.ModelBase import Company
 
 
 class OrdinaryCompanyPictures(models.Model):
-    image = models.ImageField(upload_to='images/companies/bulk/')
+    image = models.ImageField(upload_to='images/company/bulk/')
     company = models.ForeignKey('OrdinaryCompany')
 
 
 class SponsorCompanyPictures(models.Model):
-    image = models.ImageField(upload_to='images/companies/bulk/')
+    image = models.ImageField(upload_to='images/company/bulk/')
     company = models.ForeignKey('SponsorCompany')
 
 

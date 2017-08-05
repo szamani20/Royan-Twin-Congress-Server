@@ -25,7 +25,7 @@ urlpatterns = [
     url(r'^scc/', include('scc.urls', namespace='scc')),
     url(r'^rbc/', include('rbc.urls', namespace='rbc')),
     url(r'^nc/', include('nc.urls', namespace='nc')),
-    url(r'^company/', include('companies.urls', namespace='companies')),
+    url(r'^company/', include('company.urls', namespace='company')),
     url(r'^akp/', include('akp.urls', namespace='akp')),
     url(r'^agenda/', include('agenda.urls', namespace='agenda')),
 ]
