@@ -19,6 +19,7 @@ class SponsorCompany(Company):
 
     def get_json(self):
         return {
+            'id': self.pk,
             'name': self.name,
             'logo': self.logo.url if self.logo and self.logo.url else '',
             'location': self.location,
@@ -39,6 +40,7 @@ class OrdinaryCompany(Company):
 
     def get_json(self):
         return {
+            'id': self.pk,
             'name': self.name,
             'logo': self.logo.url if self.logo and self.logo.url else '',
             'location': self.location,
