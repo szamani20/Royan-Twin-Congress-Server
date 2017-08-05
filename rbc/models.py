@@ -56,7 +56,14 @@ class ISSpeaker(Speaker):
                     'result': self.isabstract_set.first().result,
                     'conclusion': self.isabstract_set.first().conclusion,
                     'keyword': self.isabstract_set.first().keyword,
-                } if self.isabstract_set.first() else None,
+                } if self.isabstract_set.first() else {
+                    'background': '',
+                    'objective': '',
+                    'method': '',
+                    'result': '',
+                    'conclusion': '',
+                    'keyword': '',
+                },
                 }
 
 
@@ -83,7 +90,14 @@ class OPSpeaker(Speaker):
                     'result': self.opabstract_set.first().result,
                     'conclusion': self.opabstract_set.first().conclusion,
                     'keyword': self.opabstract_set.first().keyword,
-                } if self.opabstract_set.first() else None,
+                } if self.opabstract_set.first() else {
+                    'background': '',
+                    'objective': '',
+                    'method': '',
+                    'result': '',
+                    'conclusion': '',
+                    'keyword': '',
+                },
                 }
 
 
@@ -110,5 +124,12 @@ class Poster(Speaker):
                     'result': self.posterabstract_set.first().result,
                     'conclusion': self.posterabstract_set.first().conclusion,
                     'keyword': self.posterabstract_set.first().keyword,
-                } if self.posterabstract_set.first() else None,
+                } if self.posterabstract_set.first() else {
+                    'background': '',
+                    'objective': '',
+                    'method': '',
+                    'result': '',
+                    'conclusion': '',
+                    'keyword': '',
+                },
                 }
