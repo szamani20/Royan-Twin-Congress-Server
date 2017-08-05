@@ -25,7 +25,7 @@ class SponsorCompany(Company):
             'location': self.location,
             'pics': [
                 'https://royan.szamani.ir' + i.image.url if i.image and i.image.url else ''
-                for i in list(self.companypictures_set.all())
+                for i in list(self.sponsorcompanypictures_set.all())
                 ],
             'website': self.website,
             'phone': self.phone,
@@ -46,7 +46,7 @@ class OrdinaryCompany(Company):
             'location': self.location,
             'pics': [
                 'https://royan.szamani.ir' + i.image.url if i.image and i.image.url else ''
-                for i in list(self.companypictures_set.all())
+                for i in list(self.ordinarycompanypictures_set.all())
                 ],
             'website': self.website,
             'phone': self.phone,
