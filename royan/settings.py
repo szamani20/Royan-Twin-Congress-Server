@@ -127,3 +127,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = (
     os.path.join(BASE_DIR, "media/")
 )
+
+PUSH_URL = 'https://panel.pushe.co/api/v1/notifications/'
+PUSH_TOKEN = '5ac9ed0545d2407305e545ae2aeb4467ffa8aed1'
+PACKAGE_NAME = 'com.royan.twincongress'
