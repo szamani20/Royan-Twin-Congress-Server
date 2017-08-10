@@ -14,7 +14,7 @@ data_base = {
     'notification': {
         'show_app': False
     },
-    'change': {
+    'custom_content': {
         'model': None,
         'type': None,
         'id': None
@@ -23,9 +23,9 @@ data_base = {
 
 
 def send_push(model, type, id):
-    data_base['change']['model'] = model
-    data_base['change']['type'] = type
-    data_base['change']['id'] = id
+    data_base['custom_content']['model'] = model
+    data_base['custom_content']['type'] = type
+    data_base['custom_content']['id'] = id
     requests.post(PUSH_URL,
                   headers=headers,
                   data=json.dumps(data_base))
