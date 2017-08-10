@@ -1,4 +1,5 @@
 import requests
+import json
 
 from royan.settings import PUSH_URL, PUSH_TOKEN, PACKAGE_NAME
 
@@ -27,4 +28,4 @@ def send_push(model, type, id):
     data_base['change']['id'] = id
     requests.post(PUSH_URL,
                   headers=headers,
-                  data=data_base)
+                  data=json.dumps(data_base))
