@@ -1,3 +1,5 @@
+import json
+
 from django.http import HttpResponse
 from django.http import JsonResponse
 from django.utils import timezone
@@ -26,9 +28,10 @@ def or_company(request):
 
 @csrf_exempt
 def fetch(request):
-    model_type = request.POST.get('model_type', 'UNKNOWN')
-    start_id = request.POST.get('start_id', '-1')
-    end_id = request.POST.get('end_id', '-1')
+    data = json.loads(request.body.decode('utf-8'))
+    model_type = data.get('model_type', 'UNKNOWN')
+    start_id = data.get('start_id', '-1')
+    end_id = data.get('end_id', '-1')
     res = []
 
     if model_type == 'SP':
