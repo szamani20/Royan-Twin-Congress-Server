@@ -17,14 +17,16 @@ data_base = {
     'custom_content': {
         'model': None,
         'type': None,
+        'sub_type': None,
         'id': None
     }
 }
 
 
-def send_push(model, type, id):
+def send_push(model, type, sub_type, id):
     data_base['custom_content']['model'] = model
     data_base['custom_content']['type'] = type
+    data_base['custom_content']['sub_type'] = sub_type
     data_base['custom_content']['id'] = id
     requests.post(PUSH_URL,
                   headers=headers,

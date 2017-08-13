@@ -8,16 +8,16 @@ from scc.models import ISSpeaker, OPSpeaker, Poster
 @receiver(post_save, sender=ISSpeaker)
 def iss_signal(sender, instance, **kwargs):
     print('Received Signal: ', instance.name)
-    send_push('speaker', 'IS', instance.pk)
+    send_push('speaker', 'scc', 'is', instance.pk)
 
 
 @receiver(post_save, sender=OPSpeaker)
 def op_signal(sender, instance, **kwargs):
     print('Received Signal: ', instance.name)
-    send_push('speaker', 'OP', instance.pk)
+    send_push('speaker', 'scc', 'op', instance.pk)
 
 
 @receiver(post_save, sender=Poster)
 def poster_signal(sender, instance, **kwargs):
     print('Received Signal: ', instance.name)
-    send_push('speaker', 'POSTER', instance.pk)
+    send_push('speaker', 'scc', 'poster', instance.pk)
