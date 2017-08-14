@@ -34,22 +34,12 @@ def all_international_winners(request):
                         safe=False)
 
 
-def kazemi_winner(request):
-    kw = InternationalWinner.objects.filter(kazemi=True).first()
-    if not kw:
-        return JsonResponse(data={},
-                            safe=False)
-    data = kw.get_json()
-    return JsonResponse(data=data,
-                        safe=False)
-
-
 @csrf_exempt
 def fetch(request):
     data = json.loads(request.body.decode('utf-8'))
     model_type = data.get('model_type', 'UNKNOWN')
-    start_id = data.get('start_id', '-1')
-    end_id = data.get('end_id', '-1')
+    start_id = data.get('start_id', '10000')
+    end_id = data.get('end_id', '-10000')
     res = []
 
     if model_type == 'NW':

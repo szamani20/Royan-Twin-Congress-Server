@@ -30,8 +30,8 @@ def or_company(request):
 def fetch(request):
     data = json.loads(request.body.decode('utf-8'))
     model_type = data.get('model_type', 'UNKNOWN')
-    start_id = data.get('start_id', '-1')
-    end_id = data.get('end_id', '-1')
+    start_id = data.get('start_id', '10000')
+    end_id = data.get('end_id', '-10000')
     res = []
 
     if model_type == 'SP':
