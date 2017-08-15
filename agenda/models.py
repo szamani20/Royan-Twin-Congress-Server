@@ -9,8 +9,9 @@ class Event(models.Model):
 
     def get_json(self):
         return {
-            'speaker_name': self.speaker_name,
+            'id': self.pk,
+            'name': self.speaker_name,
             'topic': self.topic,
-            'event_time': self.event_time.ctime(),
-            'event_venue': self.event_venue
+            'time': self.event_time.ctime(),
+            'venue': self.event_venue
         }
