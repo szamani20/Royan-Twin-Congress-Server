@@ -7,5 +7,5 @@ from agenda.models import Event
 
 @receiver(post_save, sender=Event)
 def sponsor_signal(sender, instance, **kwargs):
-    print('Received Signal: ', instance.name)
-    send_push('winner', None, None, instance.pk)
+    print('Received Signal: ', instance.speaker_name)
+    send_push('event', None, None, instance.pk)

@@ -7,7 +7,7 @@ from agenda.models import Event
 class CompanyAdmin(admin.ModelAdmin):
     list_display = ('speaker_name', 'event_time', 'event_venue')
     list_filter = ('speaker_name', 'event_time', 'event_venue')
-    search_fields = ('name', 'event_time', 'event_venue')
+    search_fields = ('speaker_name', 'event_time', 'event_venue')
     fields = ('speaker_name', 'topic', 'event_time',
               'event_venue')
     ordering = ('event_time',)
