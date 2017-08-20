@@ -1,1 +1,1 @@
-default_app_config = 'rbc.apps.RbcConfig'
+# default_app_config = 'rbc.apps.RbcConfig'

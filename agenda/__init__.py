@@ -1,1 +1,1 @@
-default_app_config = 'agenda.apps.AgendaConfig'
+# default_app_config = 'agenda.apps.AgendaConfig'

@@ -1,1 +1,1 @@
-default_app_config = 'nc.apps.NcConfig'
+# default_app_config = 'nc.apps.NcConfig'
