@@ -13,22 +13,22 @@ def alive(request):
 
 
 def all_winners(request):
-    nw = list(NationalWinner.objects.all())
-    iw = list(InternationalWinner.objects.all())
+    nw = list(NationalWinner.objects.all().order_by('pk'))
+    iw = list(InternationalWinner.objects.all().order_by('pk'))
     data = [s.get_json() for s in nw] + [s.get_json() for s in iw]
     return JsonResponse(data=data,
                         safe=False)
 
 
 def all_national_winners(request):
-    ac = list(NationalWinner.objects.all())
+    ac = list(NationalWinner.objects.all().order_by('pk'))
     data = [s.get_json() for s in ac]
     return JsonResponse(data=data,
                         safe=False)
 
 
 def all_international_winners(request):
-    ac = list(InternationalWinner.objects.all())
+    ac = list(InternationalWinner.objects.all().order_by('pk'))
     data = [s.get_json() for s in ac]
     return JsonResponse(data=data,
                         safe=False)
@@ -45,10 +45,10 @@ def fetch(request):
     if model_type == 'NW':
         res = list(map(lambda x: x.get_json(),
                        list(NationalWinner.objects.filter(
-                           pk__gte=start_id, pk__lte=end_id))))
+                           pk__gte=start_id, pk__lte=end_id).order_by('pk'))))
     elif model_type == 'IW':
         res = list(map(lambda x: x.get_json(),
                        list(InternationalWinner.objects.filter(
-                           pk__gte=start_id, pk__lte=end_id))))
+                           pk__gte=start_id, pk__lte=end_id).order_by('pk'))))
 
     return JsonResponse(data=res, safe=False)
