@@ -13,14 +13,14 @@ def alive(request):
 
 
 def sp_company(request):
-    all_is_speakers = list(SponsorCompany.objects.all())
+    all_is_speakers = list(SponsorCompany.objects.all().order_by('pk'))
     data = [s.get_json() for s in all_is_speakers]
     return JsonResponse(data=data,
                         safe=False)
 
 
 def or_company(request):
-    all_is_speakers = list(OrdinaryCompany.objects.all())
+    all_is_speakers = list(OrdinaryCompany.objects.all().order_by('pk'))
     data = [s.get_json() for s in all_is_speakers]
     return JsonResponse(data=data,
                         safe=False)
@@ -37,10 +37,10 @@ def fetch(request):
     if model_type == 'SP':
         res = list(map(lambda x: x.get_json(),
                        list(SponsorCompany.objects.filter(
-                           pk__gte=start_id, pk__lte=end_id))))
+                           pk__gte=start_id, pk__lte=end_id).order_by('pk'))))
     elif model_type == 'OR':
         res = list(map(lambda x: x.get_json(),
                        list(OrdinaryCompany.objects.filter(
-                           pk__gte=start_id, pk__lte=end_id))))
+                           pk__gte=start_id, pk__lte=end_id).order_by('pk'))))
 
     return JsonResponse(data=res, safe=False)

@@ -13,7 +13,7 @@ def alive(request):
 
 
 def all_events(request):
-    es = list(Event.objects.all())
+    es = list(Event.objects.all().order_by('pk'))
     data = [s.get_json() for s in es]
     return JsonResponse(data=data,
                         safe=False)
@@ -26,6 +26,6 @@ def fetch(request):
     end_id = data.get('end_id', '-10000')
     res = list(map(lambda x: x.get_json(),
                    list(Event.objects.filter(
-                       pk__gte=start_id, pk__lte=end_id))))
+                       pk__gte=start_id, pk__lte=end_id).order_by('pk'))))
 
     return JsonResponse(data=res, safe=False)

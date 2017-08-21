@@ -13,21 +13,21 @@ def alive(request):
 
 
 def is_speaker(request):
-    all_is_speakers = list(ISSpeaker.objects.all())
+    all_is_speakers = list(ISSpeaker.objects.all().order_by('pk'))
     data = [s.get_json() for s in all_is_speakers]
     return JsonResponse(data=data,
                         safe=False)
 
 
 def op_speaker(request):
-    all_is_speakers = list(OPSpeaker.objects.all())
+    all_is_speakers = list(OPSpeaker.objects.all().order_by('pk'))
     data = [s.get_json() for s in all_is_speakers]
     return JsonResponse(data=data,
                         safe=False)
 
 
 def poster(request):
-    all_is_speakers = list(Poster.objects.all())
+    all_is_speakers = list(Poster.objects.all().order_by('pk'))
     data = [s.get_json() for s in all_is_speakers]
     return JsonResponse(data=data,
                         safe=False)
@@ -44,14 +44,14 @@ def fetch(request):
     if model_type == 'IS':
         res = list(map(lambda x: x.get_json(),
                        list(ISSpeaker.objects.filter(
-                           pk__gte=start_id, pk__lte=end_id))))
+                           pk__gte=start_id, pk__lte=end_id).order_by('pk'))))
     elif model_type == 'OP':
         res = list(map(lambda x: x.get_json(),
                        list(OPSpeaker.objects.filter(
-                           pk__gte=start_id, pk__lte=end_id))))
+                           pk__gte=start_id, pk__lte=end_id).order_by('pk'))))
     elif model_type == 'Poster':
         res = list(map(lambda x: x.get_json(),
                        list(Poster.objects.filter(
-                           pk__gte=start_id, pk__lte=end_id))))
+                           pk__gte=start_id, pk__lte=end_id).order_by('pk'))))
 
     return JsonResponse(data=res, safe=False)
