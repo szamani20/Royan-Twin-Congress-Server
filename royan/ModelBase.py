@@ -38,7 +38,6 @@ class Winner(models.Model):
     short_cv = models.CharField(max_length=200)
     award_time = models.DateTimeField()
     award_venue = models.CharField(max_length=200)
-    kazemi = models.BooleanField(default=False)
 
     class Meta:
         managed = False
@@ -50,6 +49,7 @@ class Company(models.Model):
     logo = models.ImageField(null=True, blank=True, upload_to='images/company/')
     location = models.CharField(max_length=200, null=True, blank=True)  # ghorfe!
     website = models.URLField(null=True, blank=True)
+    description = models.TextField()
     phone = models.CharField(max_length=20, null=True, blank=True)
     address = models.CharField(max_length=200, null=True, blank=True)
 

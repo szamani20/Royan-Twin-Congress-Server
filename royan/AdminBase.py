@@ -2,7 +2,7 @@ from django.contrib import admin
 
 speaker_display = ('name', 'email', 'country', 'topic')
 winner_display = ('name', 'email', 'country', 'award_time',
-                  'award_venue', 'kazemi')
+                  'award_venue', )
 company_display = ('name', 'website', 'phone', 'location')
 
 
@@ -40,8 +40,8 @@ class WinnerAdminBase(admin.ModelAdmin):
                      'award_venue')
     fields = ('name', 'avatar', 'email', 'affiliation',
               'country', 'short_cv',
-              'award_time', 'award_venue', 'kazemi')
-    ordering = ('-kazemi', 'award_time',)
+              'award_time', 'award_venue',)
+    ordering = ('award_time',)
 
 
 class CompanyAdminBase(admin.ModelAdmin):
@@ -49,5 +49,5 @@ class CompanyAdminBase(admin.ModelAdmin):
     list_filter = company_display
     search_fields = company_display
     fields = ('name', 'logo', 'location',
-              'website', 'phone', 'address')
+              'website', 'description', 'phone', 'address')
     ordering = ('name',)

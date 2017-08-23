@@ -28,6 +28,7 @@ class SponsorCompany(Company):
                 for i in list(self.sponsorcompanypictures_set.all())
                 ],
             'website': self.website,
+            'description': self.description,
             'phone': self.phone,
             'address': self.address,
             'type': 0
@@ -49,6 +50,7 @@ class OrdinaryCompany(Company):
                 for i in list(self.ordinarycompanypictures_set.all())
                 ],
             'website': self.website,
+            'description': self.description,
             'phone': self.phone,
             'address': self.address,
             'type': 1
