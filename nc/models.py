@@ -47,7 +47,7 @@ class ISSpeaker(Speaker):
                 'avatar': 'https://royan.szamani.ir' + self.avatar.url if self.avatar and self.avatar.url else '',
                 'affiliation': self.affiliation,
                 'topic': self.topic,
-                'time': self.time.ctime(),
+                'time': self.time.ctime() if self.time else self.time,
                 'venue': self.venue,
                 'aabstract': {
                     'background': self.isabstract_set.first().background,
@@ -81,7 +81,7 @@ class OPSpeaker(Speaker):
                 'avatar': 'https://royan.szamani.ir' + self.avatar.url if self.avatar and self.avatar.url else '',
                 'affiliation': self.affiliation,
                 'topic': self.topic,
-                'time': self.time.ctime(),
+                'time': self.time.ctime() if self.time else self.time,
                 'venue': self.venue,
                 'aabstract': {
                     'background': self.opabstract_set.first().background,
@@ -115,7 +115,7 @@ class Poster(Speaker):
                 'avatar': 'https://royan.szamani.ir' + self.avatar.url if self.avatar and self.avatar.url else '',
                 'affiliation': self.affiliation,
                 'topic': self.topic,
-                'time': self.time.ctime(),
+                'time': self.time.ctime() if self.time else self.time,
                 'venue': self.venue,
                 'aabstract': {
                     'background': self.posterabstract_set.first().background,

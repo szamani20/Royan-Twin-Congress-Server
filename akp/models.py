@@ -36,7 +36,7 @@ class NationalWinner(Winner):
                 'affiliation': self.affiliation,
                 'country': self.country,
                 'short_cv': self.short_cv,
-                'award_time': self.award_time.ctime(),
+                'award_time': self.award_time.ctime() if self.time else self.time,
                 'award_venue': self.award_venue,
                 'aabstract': {'id': self.pk,
                               'background': self.nationalwinnerabstract_set.first().background,
@@ -69,7 +69,7 @@ class InternationalWinner(Winner):
                 'affiliation': self.affiliation,
                 'country': self.country,
                 'short_cv': self.short_cv,
-                'award_time': self.award_time.ctime(),
+                'award_time': self.award_time.ctime() if self.time else self.time,
                 'award_venue': self.award_venue,
                 'aabstract': {
                     'background': self.internationalwinnerabstract_set.first().background,
