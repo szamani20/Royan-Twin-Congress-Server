@@ -12,6 +12,6 @@ class Event(models.Model):
             'id': self.pk,
             'name': self.speaker_name,
             'topic': self.topic,
-            'time': self.event_time.ctime() if self.time else self.time,
+            'time': self.event_time.ctime() if self.event_time else self.event_time,
             'venue': self.event_venue
         }
