@@ -8,6 +8,9 @@ class Event(models.Model):
     event_venue = models.CharField(max_length=200)
 
     def get_json(self):
+        import datetime
+        if self.time:
+            self.time += datetime.timedelta(hours=4, minutes=30)
         return {
             'id': self.pk,
             'name': self.speaker_name,

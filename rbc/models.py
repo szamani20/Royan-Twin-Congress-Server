@@ -38,6 +38,9 @@ class ISSpeaker(Speaker):
         verbose_name = 'RBC Invited Speaker'
 
     def get_json(self):
+        import datetime
+        if self.time:
+            self.time += datetime.timedelta(hours=4, minutes=30)
         return {'id': self.pk,
                 'congress': 1,
                 'type': 0,
@@ -72,6 +75,9 @@ class OPSpeaker(Speaker):
         verbose_name = 'RBC Oral Presentation'
 
     def get_json(self):
+        import datetime
+        if self.time:
+            self.time += datetime.timedelta(hours=4, minutes=30)
         return {'id': self.pk,
                 'congress': 1,
                 'type': 1,
@@ -106,6 +112,9 @@ class Poster(Speaker):
         verbose_name = 'RBC Poster'
 
     def get_json(self):
+        import datetime
+        if self.time:
+            self.time += datetime.timedelta(hours=4, minutes=30)
         return {'id': self.pk,
                 'congress': 1,
                 'type': 2,
