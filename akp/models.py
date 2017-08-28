@@ -29,8 +29,8 @@ class NationalWinner(Winner):
 
     def get_json(self):
         import datetime
-        if self.time:
-            self.time += datetime.timedelta(hours=4, minutes=30)
+        if self.award_time:
+            self.award_time += datetime.timedelta(hours=4, minutes=30)
 
         return {'id': self.pk,
                 'type': 1,
@@ -66,8 +66,8 @@ class InternationalWinner(Winner):
 
     def get_json(self):
         import datetime
-        if self.time:
-            self.time += datetime.timedelta(hours=4, minutes=30)
+        if self.award_time:
+            self.award_time += datetime.timedelta(hours=4, minutes=30)
         return {'id': self.pk,
                 'type': 0,
                 'name': self.name,
