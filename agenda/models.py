@@ -9,8 +9,8 @@ class Event(models.Model):
 
     def get_json(self):
         import datetime
-        if self.time:
-            self.time += datetime.timedelta(hours=4, minutes=30)
+        if self.event_time:
+            self.event_time += datetime.timedelta(hours=4, minutes=30)
         return {
             'id': self.pk,
             'name': self.speaker_name,
